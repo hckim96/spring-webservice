@@ -1,4 +1,4 @@
-package com.example.springwebservice.domain.posts;
+package com.example.springwebservice.domain.post;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
@@ -12,9 +12,9 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-public class PostsRepositoryTest {
+public class PostRepositoryTest {
     @Autowired
-    PostsRepository postsRepository;
+    PostRepository postsRepository;
 
     @AfterEach
     public void cleanup() {
@@ -23,12 +23,12 @@ public class PostsRepositoryTest {
 
     @Test
     public void getPosts() {
-        Posts n = Posts.builder().author("author").content("content").title("title").build();
+        Post n = Post.builder().author("author").content("content").title("title").build();
 
         postsRepository.save(n);
-        List<Posts> postsList = postsRepository.findAll();
+        List<Post> postsList = postsRepository.findAll();
 
-        Posts post = postsList.get(0);
+        Post post = postsList.get(0);
         assertEquals("author", post.getAuthor());
         assertEquals("content", post.getContent());
     }
@@ -36,10 +36,10 @@ public class PostsRepositoryTest {
     @Test
     public void checkDateInEntity() {
         LocalDateTime now = LocalDateTime.now();
-        postsRepository.save(Posts.builder().author("author").content("content").title("title").build());
+        postsRepository.save(Post.builder().author("author").content("content").title("title").build());
 
-        List<Posts> posts = postsRepository.findAll();
-        Posts post = posts.get(0);
+        List<Post> posts = postsRepository.findAll();
+        Post post = posts.get(0);
 
         assertTrue(post.getCreatedDate().isAfter(now));
         assertTrue(post.getModifiedDate().isAfter(now));

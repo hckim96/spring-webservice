@@ -1,4 +1,4 @@
-package com.example.springwebservice.domain.posts;
+package com.example.springwebservice.domain.post;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -14,9 +14,10 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
+
 @Getter
 @Entity
-public class Posts extends BaseTimeEntity {
+public class Post extends BaseTimeEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -31,7 +32,7 @@ public class Posts extends BaseTimeEntity {
     private String author;
 
     @Builder
-    public Posts(String title, String content, String author) {
+    public Post(String title, String content, String author) {
         this.title = title;
         this.content = content;
         this.author = author;
