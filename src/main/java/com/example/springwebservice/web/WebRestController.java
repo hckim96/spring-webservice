@@ -1,6 +1,7 @@
 package com.example.springwebservice.web;
 
-import com.example.springwebservice.domain.post.PostRepository;
+import com.example.springwebservice.dto.PostSaveRequestDto;
+import com.example.springwebservice.service.PostService;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -12,7 +13,7 @@ import lombok.AllArgsConstructor;
 @RestController
 @AllArgsConstructor
 public class WebRestController {
-    private PostRepository postsRepository;
+    private PostService postService;
 
     @GetMapping("/hello")
     public String hello() {
@@ -20,8 +21,7 @@ public class WebRestController {
     }
 
     @PostMapping("/post")
-    public void savePost(@RequestBody PostSaveRequestDto dto) {
-        postsRepository.save(dto.toEntity());
+    public Long savePost(@RequestBody PostSaveRequestDto dto) {
+        return postService.save(dto);
     }
-
 }

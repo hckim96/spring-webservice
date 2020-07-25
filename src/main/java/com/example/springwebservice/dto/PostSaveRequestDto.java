@@ -1,4 +1,4 @@
-package com.example.springwebservice.web;
+package com.example.springwebservice.dto;
 
 import com.example.springwebservice.domain.post.Post;
 

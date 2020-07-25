@@ -2,9 +2,11 @@ package com.example.springwebservice.service;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+
 import com.example.springwebservice.domain.post.Post;
 import com.example.springwebservice.domain.post.PostRepository;
-import com.example.springwebservice.web.PostSaveRequestDto;
+import com.example.springwebservice.dto.PostSaveRequestDto;
 
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
@@ -29,12 +31,12 @@ public class PostServiceTest {
                 .build();
 
         postService.save(dto);
-
-        Post post = postRepository.findAll().get(0);
+        List<Post> postList = postRepository.findAll();
+        Post post = postList.get(2); // 0,1 inserted at start
 
         assertTrue(post.getAuthor().equals("author"));
         assertTrue(post.getContent().equals("content"));
         assertTrue(post.getTitle().equals("title"));
-
     }
+
 }
