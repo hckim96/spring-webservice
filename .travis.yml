@@ -44,5 +44,5 @@ deploy:
         region: ap-northeast-2
         wait-until-deployed: true
         on:
-        repo: hckim96/spring-webservice
-        branch: master
+            repo: hckim96/spring-webservice
+            branch: master
