@@ -32,8 +32,7 @@ public class PostServiceTest {
 
         postService.save(dto);
         List<Post> postList = postRepository.findAll();
-        Post post = postList.get(2); // 0,1 inserted at start
-
+        Post post = postList.get(postList.size() - 1); // 0,1 inserted at start
         assertTrue(post.getAuthor().equals("author"));
         assertTrue(post.getContent().equals("content"));
         assertTrue(post.getTitle().equals("title"));
