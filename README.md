@@ -11,3 +11,6 @@ lombok
 jpa
 h2
 actuator
+
+## URL
+http://ec2-15-164-139-135.ap-northeast-2.compute.amazonaws.com:8080/
