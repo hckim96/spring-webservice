@@ -1,0 +1,6 @@
+#aws codedeploy configuration
+version: 0.0
+os: linux
+files:
+    - source: /
+      destination: /home/ec2-user/app/travis/build/
