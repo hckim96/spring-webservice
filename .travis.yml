@@ -1,0 +1,17 @@
+language: java
+jdk:
+- openjdk8
+branches:
+  only:
+  - master
+cache:
+  directories:
+  - "$HOME/.m2/repository"
+  - "$HOME/.gradle"
+script: "./gradlew clean build"
+notifications:
+  email:
+    recipients:
+    - hyeoncheolkim96@gmail.com
+  slack:
+    secure: bDZUb1W2vNy2H6ERE2i9ejHCOeuVbglWyFO/VneHinQ9cqZ5UqTLj4QQakrH2Vf3h+54ht2/FTvDsySjJpSJao1DL8/GHi4Tfqm9mDLFfnUgczeJSUHPfdIVxYnwotvmg/rZ2IBwV7bmJa/p+yAZN5OpBemd8ildrxdyyofdQkYmGtQuXQ0A2ljLugg43jht09buaDhOX57YRr8c11S2wWwBMtp+sGoKM5k0w5FzhkWj3c5i108RmzjB2uFmGlphwK3f4ajc923WwFoG1HHbiCeKjgfuTaPX8dbPdMLtJUjPGOMOrAjibCPeJ+4WHqM5mV33ekhB44G3J1tjndJd3Nu8Eas7sPmeF+EhhQRt2y6UuBTKXrCugP2yGyT80FnA88MAEIqxVeUKps+JgSiNTnhAtzWyBJFs4akxN604STbVs+LGdXbSesz+dyLDSp0geo1Uk3FC5RhjczYfExOaOvfgt++nsuNfAJD/MXqF1/z/POH9mBy1YvXccDqVqL8Lys9EQ0y05qInIf219CZovZRDTaHXTj+3GYjkG4bVm2TSNxR5dNVZka+wfxgSaIGMKiVH4DSjL1WVnuAgseDCkoSTN0dL/OWtzDVOxDZS0lAdBqDdlAx4EMq1ZfxxCW8Ot58qBH39fLOZ4En+9l8km9zFs+5FO12sZwnTy3qK9/o=
