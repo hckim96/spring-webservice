@@ -20,4 +20,11 @@ public class WebControllerTest {
         assertTrue(body.contains("spring-webservice"));
     }
 
+    @Test
+    public void getProfileTest() {
+        String profile = restTemplate.getForObject("/profile", String.class);
+
+        assertTrue(profile.equals("local"));
+    }
+
 }
